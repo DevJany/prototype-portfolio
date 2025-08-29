@@ -1,0 +1,483 @@
+@import url('https://fonts.cdnfonts.com/css/hello-bonia-serif');
+@import url('https://fonts.cdnfonts.com/css/lexend-deca');
+@import url("https://fonts.cdnfonts.com/css/sunroll");
+@import url("https://fonts.cdnfonts.com/css/arkham");
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: #C0B5B3;
+  --foreground: #100E11;
+  --card: #C0B5B3;
+  --card-foreground: #100E11;
+  --popover: #C0B5B3;
+  --popover-foreground: #100E11;
+  --primary: #490206;
+  --primary-foreground: #C0B5B3;
+  --secondary: #4e494941;
+  --secondary-foreground: #100E11;
+  --muted: #706B68;
+  --muted-foreground: #2C0001;
+  --accent: #490206;
+  --accent-foreground: #490206;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #706B68;
+  --input: #706B68;
+  --ring: #490206;
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: #C0B5B3;
+  --sidebar-foreground: #100E11;
+  --sidebar-primary: #490206;
+  --sidebar-primary-foreground: #C0B5B3;
+  --sidebar-accent: #706B68;
+  --sidebar-accent-foreground: #100E11;
+  --sidebar-border: #706B68;
+  --sidebar-ring: #490206;
+}
+
+.dark {
+  --background: #100E11;
+  --foreground: #e5e5e5;
+  --card: #2C0001;
+  --card-foreground: #E5E5E5;
+  --popover: #002c00;
+  --popover-foreground: #e5e5e5;
+  --primary: #c1161e;
+  --primary-foreground: #e5e5e5;
+  --secondary: #706B68;
+  --secondary-foreground: #E5E5E5;
+  --muted: #706B68;
+  --muted-foreground: #D1D1D1;
+  --accent: #706B68;
+  --accent-foreground: #E5E5E5;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: rgba(229, 229, 229, 0.1);
+  --input: rgba(229, 229, 229, 0.15);
+  --ring: #706B68;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: #2C0001;
+  --sidebar-foreground: #E5E5E5;
+  --sidebar-primary: #490206;
+  --sidebar-primary-foreground: #E5E5E5;
+  --sidebar-accent: #706B68;
+  --sidebar-accent-foreground: #E5E5E5;
+  --sidebar-border: rgba(229, 229, 229, 0.1);
+  --sidebar-ring: #706B68;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  background: rgba(192, 181, 179, 0.1);
+  border-bottom: 1px solid rgba(192, 181, 179, 0.2);
+  transition: all 0.3s ease;
+}
+
+.dark .navbar {
+  background: rgba(16, 14, 17, 0.8);
+  border-bottom: 1px solid rgba(229, 229, 229, 0.1);
+}
+
+.navbar-scrolled {
+  background: rgba(192, 181, 179, 0.95);
+}
+
+.dark .navbar-scrolled {
+  background: rgba(16, 14, 17, 0.95);
+}
+
+/* Background Animado */
+.animated-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.geometric-shape {
+  position: absolute;
+  background: linear-gradient(45deg, rgba(73, 2, 6, 0.1), rgba(112, 107, 104, 0.1));
+  border-radius: 8px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.dark .geometric-shape {
+  background: linear-gradient(45deg, rgba(73, 2, 6, 0.2), rgba(112, 107, 104, 0.2));
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+.geometric-shape:nth-child(1) {
+  width: 80px;
+  height: 80px;
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.geometric-shape:nth-child(2) {
+  width: 120px;
+  height: 120px;
+  top: 60%;
+  left: 80%;
+  animation-delay: 2s;
+}
+
+.geometric-shape:nth-child(3) {
+  width: 60px;
+  height: 60px;
+  top: 80%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+.geometric-shape:nth-child(4) {
+  width: 100px;
+  height: 100px;
+  top: 30%;
+  left: 70%;
+  animation-delay: 1s;
+}
+
+.geometric-shape:nth-child(5) {
+  width: 90px;
+  height: 90px;
+  top: 70%;
+  left: 50%;
+  animation-delay: 3s;
+}
+
+/* Fontes Góticas Personalizadas */
+.font-gothic-title {
+  font-family: 'Hello Bonia Serif', sans-serif;
+}
+
+.font-gothic-accent {
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+.font-gothic-subtitle {
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+.font-gothic-bold {
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+/* Efeitos Blur Modernos */
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass-effect {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animação de Digitação Melhorada */
+.typing-animation {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typeAndDelete 4s infinite;
+}
+
+@keyframes typeAndDelete {
+  0%, 10% { width: 0; }
+  45%, 55% { width: 100%; }
+  90%, 100% { width: 0; }
+}
+
+/* Ícone de Scroll */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(-10px); }
+  60% { transform: translateX(-50%) translateY(-5px); }
+}
+
+/* Hover Effects Góticos */
+.gothic-hover {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.gothic-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(136, 36, 41, 0.605);
+}
+
+.gothic-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(72, 10, 13, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gothic-hover:hover::before {
+  opacity: 1;
+}
+
+/* Seções com Espaçamento Minimalista */
+.section-spacing {
+  padding: 12rem 0;
+}
+
+@media (max-width: 768px) {
+  .section-spacing {
+    padding: 4rem 0;
+  }
+}
+
+/* Botões com Efeito Blur */
+.blur-button {
+  backdrop-filter: blur(8px);
+  background: rgba(73, 2, 6, 0.8);
+  border: 1px solid rgba(192, 181, 179, 0.3);
+  transition: all 0.3s ease;
+}
+
+.blur-button:hover {
+  background: rgba(73, 2, 6, 1);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(73, 2, 6, 0.4);
+}
+
+/* Timeline para Experiência */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--primary), transparent);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2.3rem;
+  top: 0.5rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 3px solid var(--background);
+}
+
+/* Tags de Tecnologia */
+.tech-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  margin: 0.25rem;
+  background: rgba(73, 2, 6, 0.1);
+  border: 1px solid rgba(73, 2, 6, 0.3);
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background: rgba(2, 73, 4, 0.2);
+  transform: translateY(-1px);
+}
+
+.dark .tech-tag {
+  background: rgba(143, 33, 39, 0.3);
+  border-color: rgba(73, 2, 6, 0.5);
+  color: var(--primary-foreground);
+}
+
+/* Container Animado para Contato */
+.contact-container {
+  position: relative;
+  padding: 3rem;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, rgba(73, 2, 6, 0.1), rgba(112, 107, 104, 0.1));
+  border: 1px solid rgba(73, 2, 6, 0.2);
+  overflow: hidden;
+}
+
+.dark .contact-container {
+  background: linear-gradient(135deg, rgba(73, 2, 6, 0.2), rgba(112, 107, 104, 0.2));
+  border-color: rgba(73, 2, 6, 0.3);
+}
+
+.contact-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(73, 2, 6, 0.1), transparent);
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.contact-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Scroll Suave */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Elementos Decorativos Góticos */
+.gothic-ornament {
+  position: relative;
+}
+
+.gothic-ornament::before,
+.gothic-ornament::after {
+  content: '✦';
+  position: absolute;
+  color: var(--primary);
+  font-size: 1.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.gothic-ornament::before {
+  left: -2rem;
+}
+
+.gothic-ornament::after {
+  right: -2rem;
+}
+
+/* Melhorias de Legibilidade */
+.text-readable {
+  color: var(--foreground);
+  font-weight: 500;
+}
+
+.dark .text-readable {
+  color: #E5E5E5;
+}
+
+.text-muted-readable {
+  color: var(--muted-foreground);
+}
+
+.dark .text-muted-readable {
+  color: #D1D1D1;
+}
+
+/* Responsividade da Navbar */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+  
+  .gothic-ornament::before,
+  .gothic-ornament::after {
+    display: none;
+  }
+}
+
+
