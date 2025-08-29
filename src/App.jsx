@@ -18,7 +18,7 @@ import {
 import './App.css';
 
 // Importar imagens
-import profileImage from './assets/profile-picture.jpeg';
+import profileImage from './assets/profile-picture.jpg';
 import projectImage1 from './assets/SLKhT3lkI13B.png';
 import projectImage2 from './assets/1loRC2YNEpsQ.jpg';
 import projectImage3 from './assets/PHZ7nMxktceA.png';
