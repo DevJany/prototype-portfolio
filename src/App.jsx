@@ -95,7 +95,7 @@ function App() {
   const hardSkills = [
     'Java', 'Spring Boot', 'Python', 'Django', 'JavaScript', 'TypeScript',
     'Angular', 'HTML', 'CSS', 'PostgreSQL', 'MongoDB', 'MySQL',
-    'Docker', 'Git', 'GitHub', 'APIs REST', 'IA Generativa', 'API Rest', 'Figma'
+    'Docker', 'Git', 'GitHub', 'APIs REST', 'IA Generativa', 'Figma'
   ];
 
   const softSkills = [
